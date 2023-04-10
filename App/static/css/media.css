@@ -1,0 +1,161 @@
+@media screen and (max-width:1200px){
+
+    header{
+        width: 95%;
+        transition: .5s linear;
+    }
+
+    header .menu, .song{
+        width: 30%;
+    }
+
+    header .song{
+        width: 70%;
+    }
+
+    header .song .content{
+        height: 18%;
+    }
+
+    header .menu h6{
+       display: none;
+
+    }
+}
+
+@media screen and (max-width:930px){
+    header .menu{
+        width: 40%;
+        z-index: 999;
+        position: absolute;
+        transition: 1s linear;
+        transform: translateX(-100%);
+    } 
+
+    header .song{
+        width: 100%;
+    }
+
+    header .play{
+        bottom: 0;
+        position: absolute;
+    }
+
+    header .menu h6{
+        position: absolute;
+        right: -40px;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+        background: rgb(23, 22, 22);
+        border-radius: 0px 10px 10px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 1s linear;
+
+    }
+}
+
+@media screen and (max-width:680px){
+    header{
+        width: 100%;
+        height: 100vh;
+    }
+
+    header .song nav ul li{
+        font-size: 11px;
+        margin-right: 10px;
+    }
+
+    header .song nav .search{
+       width: auto;
+    }
+
+    header .menu{
+        width: 60%;
+    }
+
+    header .play{
+        z-index: 99999999999999999999999999;
+    }
+
+    header .play .icon{
+        position: absolute;
+        top: -46px;
+        right: 30%;
+    }
+
+    header .play .icon::before{
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 180px;
+        border-radius: 50% 50% 0% 0%;
+        z-index: -1;
+        left: -20%;
+        background: black;
+        box-shadow: 0px -11px 20px -17px black;
+    }
+
+    header .play .wave {
+        position: absolute;
+        top: -90px;
+        width: 40px;
+        height: 40px;
+        right: 40%;
+    }
+
+    header .play .wave .wave1{
+        width: 8px;
+    }
+
+}
+
+@media screen and (max-width:470px){
+    header .song nav .search{
+        display: flex;
+        width: 150px;
+        margin-right: 5px;
+    }
+
+    header .play .wave {
+        right: 44%;
+    }
+
+    header .menu{
+        width: 70%;
+    }
+
+    header .song .popularsongs{
+        margin-top: 40px;
+    }
+     
+}
+
+@media screen and (max-width:412px){
+
+    header .song nav ul li{
+        font-size: 10px;
+        margin-right: 7px;
+    }
+
+    header .song nav .search{
+        width: 140px;
+    }
+
+    header .play .wave {
+        right: 45%;
+    }
+
+    header .menu{
+        width: 80%;
+    }
+
+    header .song .popularsongs{
+        margin-top: 60px;
+    }
+     
+}

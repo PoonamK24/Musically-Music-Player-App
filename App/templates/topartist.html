@@ -1,0 +1,217 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>My  music  Player</title>
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
+      
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+  
+  <link href="{% static './css/style.css' %}" rel="stylesheet"/>
+
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+    <style>
+      a{
+        text-decoration: none;
+        color: gray;
+    }
+
+      a:hover{     
+        color: rgb(242, 71, 71);
+    }
+    header .play h5 .subtitle{
+      color: gray;
+      margin-top: 5px;
+    }
+
+    header .songs nav .search{
+        height: 50%;
+    }
+    header .songs nav .search input{
+        background: none;
+        border: none;
+        outline: none;
+        padding: 3px 20px;
+        font-size: 15px;
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        border-radius: 20px;
+        /*border: 1px solid white;*/
+        color: rgb(240, 235, 235);
+    }
+    header .menu{
+      overflow: auto;
+    }
+    
+    header .menu::-webkit-scrollbar{
+        display: none;
+    }
+    
+    </style>
+
+ </head>
+
+ <body>
+  <header>
+
+      <div class="menu">
+
+          <h6 id="menuactivebtn"><i class="bi bi- music -note-list"></i></h6>
+          <h1><img src="/media/images/logo.png" id="logo">Musicaly</h1>
+          
+          <div class="playlist">
+            {% if request.user.is_authenticated %}
+
+            <label>HELLO, {{request.user}}</label><br>
+            <h4><a class="dropdown-item" href="/changepassword"><i class="bi bi-person-fill-lock"></i>Change Password</a></h4>
+            <h4><a class="dropdown-item" href="/userlogout"><i class="bi bi-box-arrow-right"></i>Logout</a></h4>
+            
+            {%else%}
+
+            <label>ACCOUNT</label><br>
+            <h4><a class="dropdown-item" href="/userlogin"><i class="bi bi-box-arrow-in-right"></i>Login / Register </a></h4>
+            
+            {%endif%}
+
+          </div>
+
+          <div class="playlist">
+            <label> BROWSE </label><br>
+            <h4><a href="/newReleases"><i class="bi bi-vinyl"></i>New Releases</a></h4>
+            <h4><a href="/topcharts"><i class="bi bi-file-earmark-bar-graph"></i> Top Charts</a></h4>
+            <h4><a href="/topplaylists"><i class="bi bi-music-note-list"></i>Top Playlists</a></h4>
+            <h4><a href="/topartist"><i class="bi bi-person-lines-fill"></i>Top Artists</a></h4>
+        </div>
+        <div class="playlist">
+          <label> LIBRARY </label><br>
+          <h4><a href="/favsongs"><i class="bi bi-heart"></i>Favorite Songs</a></h4>
+          <h4><a href="/recentlylistened"><i class="bi bi-clock-history"></i>Recently Listened</a></h4>
+          <h4><a href="/myalbum"><i class="bi bi-file-music "></i></i>My Albums</a></h4>  
+          <h4><a href="/"><i class="bi bi-back"></i>Back to Homepage</a></h4>
+      </div>
+
+
+      </div>
+
+      <div class="songs">
+
+        <nav>  
+          <div class="search ms-4">
+            <form method="post" action="/searchsong" >
+              {%csrf_token%}
+              <div>
+                <input id='searchsongs' name="searchsong" type="text" required>
+                <button type="submit" style="margin-left:74%;"><i class="bi bi-search"></i></button>
+              </div>
+            </form>
+          </div>  
+        </nav>
+
+
+          <div class="popularartists">
+
+              <div class="h4">
+                  <h4>Listen by Top Artists</h4>
+              </div>
+
+              <div class="artists">
+                {% for artist in artists %}
+                <a href="/viewbyartist/{{artist.name}}">
+                  <li>               
+                    <img src="/media/images/{{artist.image}}" alt="image">                 
+                    <h5 class='title'>{{artist.name}}</h5>                         
+                  </li>
+                </a>
+                {% endfor %} 
+              </div>
+
+       
+
+         
+
+            <div class="artists">
+              {% for artist in artists %}
+              <a href="/viewbyartist/{{artist.name}}">
+                <li>               
+                  <img src="/media/images/{{artist.image}}" alt="image">                 
+                  <h5 class='title'>{{artist.name}}</h5>                         
+                </li>
+              </a>
+              {% endfor %} 
+            </div>
+
+            <div class="artists">
+              {% for artist in artists %}
+              <a href="/viewbyartist/{{artist.name}}">
+                <li>               
+                  <img src="/media/images/{{artist.image}}" alt="image">                 
+                  <h5 class='title'>{{artist.name}}</h5>                         
+                </li>
+              </a>
+              {% endfor %} 
+            </div>
+
+        </div>    
+
+      </div>
+         
+     
+
+      <div class="play">
+
+          <div class="wave active1" id="wave">
+              <div class="w1"></div>
+              <div class="w1"></div>
+              <div class="w1"></div>
+              <div class="w1"></div>
+          </div>
+          
+          <img id="playposter" class="track-art" src="" alt="image"/>
+          <h5 id="title" class="track-name"><div class="subtitle track-artist"></div></h5>
+
+          <div class="icons">  
+              <i class="bi bi-shuffle shuffle">next</i>
+              <i class="bi bi-skip-start-fill prev-track" onclick="prevTrack()"></i>
+              <i class="bi bi-play-circle playpause-track" id="masterPlay" onclick="playpauseTrack()"></i>
+              <i class="bi bi-skip-end-fill next-track" id="next" onclick="nextTrack()"></i>
+              <a href='' download id="download"><i class="bi bi-download"></i></a>
+          </div>
+
+          <span id="starttime" class="current-time">00:00</span>
+          <div class="bar">
+              <input type="range" class="seek_slider" onchange="seekTo()" value="0" id="seek" min="1" max="100"/>
+              <div class="bar2" id="bar2"></div>
+              <div class="dot"></div>
+          </div>
+          <span id="endtime" class="total-duration">00:00</span>
+
+          <div class="vol">
+              <i class="bi bi-volume-up-fill" id="volicon"></i>
+              <input type="range" id="vol" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">
+              <div class="volbar"></div>
+              <div class="dot" id="voldot"></div>
+          </div>
+
+      </div>
+
+  </header>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js"></script>
+  
+  <script src="{% static './js/script.js' %}"></script>
+
+
+
+ </body>
+</html>
