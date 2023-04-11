@@ -18,22 +18,6 @@ A custom music streaming and downloading app made in javascript!
 
 **Back-end :** Python, Django, SQLite Database
 
-## Installation
-
-To get this project up and running you should start by having Python installed on your computer. Then, clone this repository and open it in your editor. 
-
-Apply migrations and create your database
-```bash
-  python manage.py migrate
-```
-Create a user with manage.py
-```bash
-  python manage.py createsuperuser
-```
-Now you can run the project with this command
-```bash
-  python manage.py runserver
-```
 ## Screenshots
 
 Home Page
