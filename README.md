@@ -45,9 +45,9 @@ Artist Listing Page
 
 ![3](https://user-images.githubusercontent.com/106222157/231246623-d2ffdb59-3e7d-4cb5-92d6-ac78fcdb2006.png)
 
-Song Listing by Artist Page
+Songs by Artist Page
 
-![2](https://user-images.githubusercontent.com/106222157/231246603-6d96e954-36e9-40cc-8489-4a3f26999296.png)
+![4](https://user-images.githubusercontent.com/106222157/231249176-e0bca74b-827d-4def-95bb-82918b432ebd.png)
 
 Register Page
 
