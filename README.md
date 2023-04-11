@@ -1,23 +1,22 @@
 # Musically - Music Player App
 
-A custom music player with the UI of old universal music player, but the layout created with new components of web.
+A custom music streaming and downloading app made in javascript!
 
 ## Features
 
-- Native look & feel, aims at keeping the original interface
-- Browse and play your music by songs, albums, artists, playlists and genre
+- Browse and play your music by songs, albums, artists and playlists 🎵
 - CRUD functionality to describe user interface conventions.
 - Smart Auto Playlists - Recently played, most played and history
 - Volume controls
+- Song Search 🔍
+- Download Support ⬇️
+- User Authentication to access playlists
 
 ## Tech Stack
 
 **Front-end :**  HTML, CSS, Bootstrap, Javascript
 
 **Back-end :** Python, Django, SQLite Database
-
-
-
 
 ## Installation
 
@@ -43,7 +42,7 @@ Home Page
 
 Artist Listing Page
 
-![3](https://user-images.githubusercontent.com/106222157/231246623-d2ffdb59-3e7d-4cb5-92d6-ac78fcdb2006.png)
+![5](https://user-images.githubusercontent.com/106222157/231250813-b07c5d63-406f-4483-9a95-bcb6dd5f3802.png)
 
 Songs by Artist Page
 
