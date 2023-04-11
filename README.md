@@ -37,10 +37,17 @@ Now you can run the project with this command
 ```
 ## Screenshots
 
-
 Home Page
 
 ![1](https://user-images.githubusercontent.com/106222157/231010163-da53e23d-9d99-414d-8f22-a1b84c6dd8b0.png)
+
+Artist Listing Page
+
+![3](https://user-images.githubusercontent.com/106222157/231246623-d2ffdb59-3e7d-4cb5-92d6-ac78fcdb2006.png)
+
+Song Listing by Artist Page
+
+![2](https://user-images.githubusercontent.com/106222157/231246603-6d96e954-36e9-40cc-8489-4a3f26999296.png)
 
 Register Page
 
@@ -51,7 +58,6 @@ Login Page
 ![1](https://user-images.githubusercontent.com/106222157/230985111-53e81d7d-cdaa-4f3b-8ec1-4998aa8933d0.png)
 
 # Hi, I'm Poonam! 👋
-
 
 ## 🚀 About Me
 I'm a full stack web developer. I'm currently open to collaborate on any projects of my listed tech stacks.
